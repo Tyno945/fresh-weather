@@ -7,11 +7,19 @@
     "start": "gulp watch",
     "dev": "gulp dev",
     "cloud": "gulp cloud:dev",
-    "build": "gulp build --type prod",
+    "build": "gulp build --env prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
-    "ignore": ["test/*", "book/*", "client/*", "bin/*", "node_modules", "dist/*", "package.json"],
+    "ignore": [
+      "test/*",
+      "book/*",
+      "client/*",
+      "bin/*",
+      "node_modules",
+      "dist/*",
+      "package.json"
+    ],
     "delay": "1000"
   },
   "engines": {
@@ -46,7 +54,11 @@
     "request": "^2.87.0",
     "run-sequence": "^2.2.1",
     "stream-combiner2": "^1.1.1",
-    "through2": "^2.0.3"
+    "through2": "^2.0.3",
+    "cheerio": "^1.0.0-rc.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "path": "^0.12.7"
+  }
 }

@@ -25,7 +25,7 @@ const jdists = require('gulp-jdists')
 
 const src = './client'
 const dist = './dist'
-const isProd = argv.type === 'prod'
+const isProd = argv.env === 'prod'
 
 const handleError = (err) => {
   console.log('\n')

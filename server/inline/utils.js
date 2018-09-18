@@ -12,11 +12,11 @@ const STATIC_SERVER_URL = 'https://tianqi-1d3bf9.tcb.qcloud.la'
 const BACKGROUND_PERFIXER = `${STATIC_SERVER_URL}/bg`
 const WEATHER_IMAGE_PERFIXER = `${STATIC_SERVER_URL}/icon`
 
-const KEY = 'xxxxxxxxxxxx'
-const USER_ID = 'HE18888888888888899'
+const KEY = '72425fcf4eb946fa8ec7f12b5140e284'
+const USER_ID = 'HE1809061732281742'
 
-const WECHAT_APPID = 'wx8696xxxxxxxxxce6'
-const WECHAT_APP_SECRET = '12wwwwwxxxxxxxxxxxxxxxx2'
+const WECHAT_APPID = 'wx85296013f4b00c9e'
+const WECHAT_APP_SECRET = '03514346c165e0b41cb5f3495cfa7993'
 const $ = {
   getWechatAppConfig: () => {
     return {
@@ -50,10 +50,10 @@ const $ = {
     return crypto.createHash('md5').update(data).digest('base64')
   },
   getWeatherImage(code, isNight) {
-    return WEATHER_IMAGE_PERFIXER + '/' + path.join(isNight ? 'night' : 'day', `${code}.svg`)
+    return WEATHER_IMAGE_PERFIXER + '/' + (isNight ? 'night' : 'day') + '/' + `${code}.svg`
   },
   getBackgroundImage(weather, isNight) {
-    return BACKGROUND_PERFIXER + '/' + path.join(isNight ? 'night' : 'day', `${weather}.jpg`)
+    return BACKGROUND_PERFIXER + '/' + (isNight ? 'night' : 'day') + '/' + `${weather}.jpg`  // 不用path.join
   },
   timeFormat(pattern = 'YYYY-MM-DD', d) {
     if (!(d instanceof Date)) {
